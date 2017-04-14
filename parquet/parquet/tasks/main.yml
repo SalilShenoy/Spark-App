@@ -1,0 +1,65 @@
+- hosts: all
+  become: yes
+  tasks:
+#    - name: Install Numpy
+#      pip: 
+#        name: numpy
+#        state: latest
+
+#    - name: Install Pandas
+#      pip: 
+#        name: pandas
+#        state: latest
+
+#    - name: Install Cython
+#      pip: 
+#        name: Cython
+#        state: latest
+
+#    - name: Install fastparquet
+#      pip: 
+#        name: fastparquet
+#        state: latest
+
+#    - name: Download dataset
+#      get_url:
+#          url: https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data
+#          dest: /etc/adult.data
+
+#    - name: Create directory scripts
+#      file: 
+#          path: scripts 
+#          state: directory
+
+#    - name: Copy script to node
+#      template: 
+#          src: "{{ item }}" 
+#          dest: "scripts" 
+#          mode: 0555 
+#      with_items:
+#          - ../files/writeParquet.py
+#          - ../files/readParq.py
+#          - ../files/schemaParq.py
+
+    - name: Create directory spark_scripts
+      file: 
+          path: spark_scripts 
+          state: directory
+
+    - name: Copy Spark scripts
+      template: 
+          src: "{{ item }}" 
+          dest: "spark_scripts" 
+          mode: 0555 
+      with_items:
+#          - ../files/queryParq.py
+          - ../files/sparkToParq.py
+
+#    - name: Convert file to Parq
+#      shell: python scripts/writeParquet.py
+
+#    - name: Convert Parq to csv
+#      shell: python scripts/readParq.py
+
+#    - name: schema in parq file
+#      shell: python scripts/schemaParq.py
