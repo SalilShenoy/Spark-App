@@ -11,7 +11,7 @@ from pyspark.storagelevel import StorageLevel
 INDIVIDUAL = 2000000
 START_POS = 1000000000
 imputedData = Row('a_id', 's_pos', 'allele', 'individual', 'dosage')
-S3_BUCKET = 's3a://23andme-sshenoy'
+S3_BUCKET = 's3a://sshenoy'
 
 
 class synthesizeData(object):
